@@ -3,6 +3,7 @@ import { Newsreader, Work_Sans } from "next/font/google";
 import "./globals.css";
 import "./mailerlite.css";
 import Navbar from "./components/Navbar";
+import Messaging from "./components/Messaging";
 import Footer from "./components/Footer";
 
 const newsreader = Newsreader({
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Messaging />
         <Footer />
       </body>
     </html>

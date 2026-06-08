@@ -2,7 +2,6 @@ import Hero from "./components/Hero";
 import Collections from "./components/Collections";
 import ValueProps from "./components/ValueProps";
 import FeaturedCollection from "./components/FeaturedCollection";
-import Messaging from "./components/Messaging";
 
 function SectionDivider() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
       <ValueProps />
       <SectionDivider />
       <FeaturedCollection />
-      <Messaging />
     </main>
   );
 }

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Messaging from "../components/Messaging";
+import MailerLiteEmbed from "../components/MailerLiteEmbed";
 import { getPresetBySlug, presets } from "../lib/data";
 
 export const metadata = {
@@ -24,69 +24,85 @@ export default function NewsletterPage() {
 
   return (
     <main className="bg-surface min-h-screen">
+
       {/* ── HERO ─────────────────────────────────────────────── */}
-      <section className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
-        <div className="grid grid-cols-12 gap-6 items-start py-16 md:py-24">
-          {/* Cover image */}
-          <div className="col-span-12 md:col-span-6 order-2 md:order-1">
-            <div className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
-              <Image
-                src={earth.coverImage}
-                alt="Earth Collection cover"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute bottom-6 left-6 bg-primary text-on-primary px-4 py-2">
-                <span className="text-label-caps">Free with subscription</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Offer + form */}
-          <div className="col-span-12 md:col-span-5 md:col-start-8 order-1 md:order-2 flex flex-col justify-center md:pt-8">
-            <p className="text-label-caps text-on-surface-variant mb-6">
-              Free preset pack
+      <section className="pt-20 border-b border-outline-variant">
+        <div className="max-w-[1440px] mx-auto px-[20px] md:px-[64px] py-24 md:py-[128px]">
+          <div className="mx-auto text-center">
+            <p className="text-label-caps text-on-surface-variant mb-8">
+              The Darkroomm Newsletter
             </p>
-            <h1 className="text-display-lg text-primary mb-4">
-              Earth
-              <br />
-              <em style={{ fontStyle: "italic" }}>Collection</em>
+            <h1 className="text-display-lg text-primary mb-6 text-balance">
+              Subscribe and get <em style={{ fontStyle: "italic" }}>the pack below</em> for free.
             </h1>
-            <p className="text-body-lg text-on-surface-variant mb-8">
-              Warm, earthy tones built on natural light. Greens that stay green,
-              skies that stay honest. Subscribe and download it right away.
+            <p className="max-w-2xl mx-auto text-body-lg text-on-surface-variant mb-10">
+              The Earth Collection, 6 desktop and 5 mobile presets, is yours
+              when you subscribe. You'll also get new pack drops, promos, and
+              occasional news from the site.
             </p>
-
-            {/* Pack spec */}
-            <div className="border-t border-outline-variant mb-8">
-              {[
-                ["Desktop presets", `${earth.includes.desktop} XMP files`],
-                ["Mobile presets", `${earth.includes.mobile} DNG files`],
-                ["Formats", earth.formats.join(" + ")],
-                ["Compatibility", "Lightroom Classic, CC, Mobile"],
-                ["Price", "Free"],
-              ].map(([label, value]) => (
-                <div
-                  key={label}
-                  className="flex justify-between items-center py-3 border-b border-outline-variant"
-                >
-                  <span className="text-label-caps text-on-surface-variant">
-                    {label}
-                  </span>
-                  <span className="text-body-md text-on-surface">{value}</span>
-                </div>
-              ))}
+            <div className="max-w-md mx-auto">
+              <MailerLiteEmbed />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Newsletter ─────────────────────────────────────── */}
-      <Messaging />
-      
+      {/* ── THE PACK ─────────────────────────────────────────── */}
+      <section className="border-b border-outline-variant">
+        <div className="max-w-[1440px] mx-auto px-[20px] md:px-[64px] py-16 md:py-24">
+          <p className="text-label-caps text-on-surface-variant mb-12">
+            The pack
+          </p>
+          <div className="grid grid-cols-12 gap-6 items-start">
+            {/* Cover */}
+            <div className="col-span-12 md:col-span-6">
+              <div className="relative w-full aspect-[4/5] overflow-hidden bg-surface-container">
+                <Image
+                  src={earth.coverImage}
+                  alt="Earth Collection cover"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Details */}
+            <div className="col-span-12 md:col-span-5 md:col-start-8 flex flex-col justify-center">
+              <h2 className="text-display-lg text-primary mb-4">
+                Earth
+                <br />
+                <em style={{ fontStyle: "italic" }}>Collection</em>
+              </h2>
+              <p className="text-body-lg text-on-surface-variant mb-10">
+                Warm, earthy tones built on natural light. Greens that stay
+                green, skies that stay honest.
+              </p>
+              <div className="border-t border-outline-variant">
+                {[
+                  ["Desktop presets", `${earth.includes.desktop} XMP files`],
+                  ["Mobile presets", `${earth.includes.mobile} DNG files`],
+                  ["Formats", earth.formats.join(" + ")],
+                  ["Compatibility", "Lightroom Classic, CC, Mobile"],
+                  ["Price", "Free"],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="flex justify-between items-center py-3 border-b border-outline-variant"
+                  >
+                    <span className="text-label-caps text-on-surface-variant">
+                      {label}
+                    </span>
+                    <span className="text-body-md text-on-surface">{value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── PREVIEW GRID ─────────────────────────────────────── */}
-      <section className="border-t border-outline-variant">
+      <section className="border-b border-outline-variant">
         <div className="max-w-[1440px] mx-auto px-[20px] md:px-[64px] py-16 md:py-24">
           <div className="flex items-end justify-between mb-10">
             <div>
@@ -101,10 +117,7 @@ export default function NewsletterPage() {
               Every image shot in natural light. No studio, no artificial setup.
             </p>
           </div>
-
-          {/* Mosaic grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {/* First image — large */}
             <div className="col-span-2 row-span-2 relative aspect-square md:aspect-auto overflow-hidden bg-surface-container">
               <Image
                 src={afterImages[0].src}
@@ -113,18 +126,12 @@ export default function NewsletterPage() {
                 className="object-cover"
               />
             </div>
-            {/* Remaining images */}
             {afterImages.slice(1).map((img) => (
               <div
                 key={img.src}
                 className="relative aspect-square overflow-hidden bg-surface-container"
               >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={img.src} alt={img.alt} fill className="object-cover" />
               </div>
             ))}
           </div>
@@ -132,7 +139,7 @@ export default function NewsletterPage() {
       </section>
 
       {/* ── KEEP EXPLORING ───────────────────────────────────── */}
-      <section className="border-t border-outline-variant bg-surface">
+      <section>
         <div className="max-w-[1440px] mx-auto px-[20px] md:px-[64px] py-16 md:py-24">
           <div className="flex items-end justify-between mb-12">
             <div>
@@ -150,7 +157,6 @@ export default function NewsletterPage() {
               All Presets
             </Link>
           </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {explorePacks.map((preset) => (
               <Link
@@ -187,8 +193,6 @@ export default function NewsletterPage() {
               </Link>
             ))}
           </div>
-
-          {/* Mobile CTA */}
           <Link
             href="/presets"
             className="md:hidden w-full flex items-center justify-center text-ui-button uppercase tracking-wider border border-primary py-4 hover:bg-primary hover:text-on-primary transition-all duration-300"
