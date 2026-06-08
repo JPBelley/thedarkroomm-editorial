@@ -39,6 +39,7 @@ export default function Navbar() {
             { label: "Presets", href: "/presets" },
             { label: "Bundles", href: "/bundles" },
             { label: "Creators", href: "/creators/thedarkroomm" },
+            { label: "Free Preset", href: "/newsletter" },
           ].map((item) => (
             <Link
               key={item.label}

@@ -30,8 +30,6 @@ async function PresetsContent({
 
   return (
     <main className="bg-surface min-h-screen">
-      <Navbar />
-
       {/* Page header */}
       <div className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
         <div className="mt-8 border-b border-outline-variant pb-4 mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
@@ -96,7 +94,7 @@ async function PresetsContent({
                   </p>
                 </div>
                 <span className="text-label-caps text-on-surface-variant whitespace-nowrap ml-2">
-                  {preset.isFree ? "Free" : `$${preset.price}`}
+                  {preset.isFree ? "Free" : `CA$${preset.price}`}
                 </span>
               </div>
             </Link>
@@ -104,7 +102,6 @@ async function PresetsContent({
         </div>
       </div>
 
-      <Footer />
     </main>
   );
 }

@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import { presets, getPresetBySlug, getPresetsByCategory } from "../../lib/data";
 
 export async function generateStaticParams() {
@@ -30,8 +28,6 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
 
   return (
     <main className="bg-surface min-h-screen">
-      <Navbar />
-
       <div className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
         {/* Breadcrumb */}
         <div className="mt-8 mb-10 flex items-center gap-3">
@@ -101,12 +97,12 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
             <div className="flex flex-col gap-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-headline-md text-primary">
-                  {preset.isFree ? "Free" : `$${preset.price}`}
+                  {preset.isFree ? "Free" : `CA$${preset.price}`}
                 </span>
                 <span className="text-label-caps text-on-surface-variant">One-time purchase</span>
               </div>
               <button className="w-full text-ui-button uppercase tracking-wider bg-primary text-on-primary py-4 hover:opacity-80 transition-opacity duration-300">
-                {preset.isFree ? "Download Free" : `Buy for $${preset.price}`}
+                {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
               </button>
               <Link
                 href="/bundles"
@@ -135,7 +131,7 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
                   </div>
                   <div className="flex justify-between items-start">
                     <h3 className="text-headline-md text-primary">{r.name}</h3>
-                    <span className="text-label-caps text-on-surface-variant">${r.price}</span>
+                    <span className="text-label-caps text-on-surface-variant">CA${r.price}</span>
                   </div>
                 </Link>
               ))}
@@ -144,7 +140,6 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
         )}
       </div>
 
-      <Footer />
     </main>
   );
 }

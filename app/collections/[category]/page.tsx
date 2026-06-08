@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import { categories, getPresetsByCategory, type Category } from "../../lib/data";
 
 export async function generateStaticParams() {
@@ -28,8 +26,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   return (
     <main className="bg-surface min-h-screen">
-      <Navbar />
-
       <div className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
         {/* Header */}
         <div className="mt-8 border-b border-outline-variant pb-6 mb-12">
@@ -85,7 +81,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
                   <p className="text-body-md text-on-surface-variant mt-1 line-clamp-2">{preset.description}</p>
                 </div>
                 <span className="text-label-caps text-on-surface-variant ml-4 whitespace-nowrap">
-                  {preset.isFree ? "Free" : `$${preset.price}`}
+                  {preset.isFree ? "Free" : `CA$${preset.price}`}
                 </span>
               </div>
             </Link>
@@ -93,7 +89,6 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         </div>
       </div>
 
-      <Footer />
     </main>
   );
 }

@@ -1,10 +1,8 @@
-import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Collections from "./components/Collections";
 import ValueProps from "./components/ValueProps";
 import FeaturedCollection from "./components/FeaturedCollection";
 import Messaging from "./components/Messaging";
-import Footer from "./components/Footer";
 
 function SectionDivider() {
   return (
@@ -17,7 +15,6 @@ function SectionDivider() {
 export default function Home() {
   return (
     <main className="bg-surface min-h-screen">
-      <Navbar />
       <Hero />
       <SectionDivider />
       <Collections />
@@ -25,7 +22,6 @@ export default function Home() {
       <SectionDivider />
       <FeaturedCollection />
       <Messaging />
-      <Footer />
     </main>
   );
 }

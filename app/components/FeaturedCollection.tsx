@@ -58,7 +58,7 @@ export default function FeaturedCollection() {
               href="/collections/moody"
               className="text-ui-button uppercase tracking-wider bg-primary text-on-primary px-6 py-4 text-center hover:opacity-80 transition-opacity duration-300"
             >
-              Buy for $24
+              Buy for CA$5
             </Link>
             <Link
               href="/bundles"

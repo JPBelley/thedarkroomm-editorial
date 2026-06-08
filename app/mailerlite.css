@@ -1,0 +1,21 @@
+/* MailerLite embedded form overrides
+   The form sits on a cream (#faf9f9) container, so we only need to
+   strip MailerLite's default rounded corners and shadows to match
+   the Darkroomm design system (sharp, flat, no radius). */
+
+.ml-embedded .ml-form-embedWrapper {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.ml-embedded input[type="email"],
+.ml-embedded input[type="text"] {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.ml-embedded button[type="submit"],
+.ml-embedded .ml-form-embedSubmit button {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}

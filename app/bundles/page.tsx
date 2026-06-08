@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { bundles, presets } from "../lib/data";
 
 export const metadata = {
@@ -12,8 +10,6 @@ export const metadata = {
 export default function BundlesPage() {
   return (
     <main className="bg-surface min-h-screen">
-      <Navbar />
-
       <div className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
         {/* Header */}
         <div className="mt-8 border-b border-outline-variant pb-6 mb-16">
@@ -71,16 +67,16 @@ export default function BundlesPage() {
                 <div className="col-span-12 md:col-span-3 flex flex-col justify-end gap-4">
                   <div>
                     <p className="text-label-caps text-on-surface-variant mb-1">Bundle price</p>
-                    <p className="text-headline-lg text-primary">${bundle.price}</p>
+                    <p className="text-headline-lg text-primary">CA${bundle.price}</p>
                     <p className="text-label-caps text-on-surface-variant mt-1 line-through">
-                      ${bundle.originalPrice} separately
+                      CA${bundle.originalPrice} separately
                     </p>
                   </div>
                   <Link
                     href={`/bundles/${bundle.slug}`}
                     className="text-ui-button uppercase tracking-wider bg-primary text-on-primary px-6 py-4 text-center hover:opacity-80 transition-opacity"
                   >
-                    Buy for ${bundle.price}
+                    Buy for CA${bundle.price}
                   </Link>
                 </div>
               </div>
@@ -89,7 +85,6 @@ export default function BundlesPage() {
         </div>
       </div>
 
-      <Footer />
     </main>
   );
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Newsreader, Work_Sans } from "next/font/google";
 import "./globals.css";
+import "./mailerlite.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const newsreader = Newsreader({
   subsets: ["latin"],
@@ -30,7 +33,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${newsreader.variable} ${workSans.variable}`}>
-      <body>{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://assets.mailerlite.com/css/universal.css"
+        />
+      </head>
+      <body>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

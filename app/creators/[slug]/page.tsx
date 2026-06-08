@@ -1,8 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
 import Logo from "../../components/Logo";
 import { creators, getCreatorBySlug, getPresetsByCreator } from "../../lib/data";
 
@@ -30,8 +28,6 @@ export default async function CreatorPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="bg-surface min-h-screen">
-      <Navbar />
-
       <div className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
         {/* Creator header */}
         <div className="mt-8 border-b border-outline-variant pb-10 mb-12">
@@ -102,7 +98,7 @@ export default async function CreatorPage({ params }: { params: Promise<{ slug: 
               <div className="flex justify-between items-start">
                 <h2 className="text-headline-md text-primary leading-tight">{preset.name}</h2>
                 <span className="text-label-caps text-on-surface-variant ml-2 whitespace-nowrap">
-                  {preset.isFree ? "Free" : `$${preset.price}`}
+                  {preset.isFree ? "Free" : `CA$${preset.price}`}
                 </span>
               </div>
             </Link>
@@ -110,7 +106,6 @@ export default async function CreatorPage({ params }: { params: Promise<{ slug: 
         </div>
       </div>
 
-      <Footer />
     </main>
   );
 }
