@@ -1,0 +1,649 @@
+// Static data layer — mirrors the Supabase schema.
+// When the backend is ready, replace these exports with API calls.
+// The page components won't need to change.
+
+export type Category = "cinematic" | "moody" | "urban" | "landscape" | "vintage";
+
+export type Creator = {
+  slug: string;
+  name: string;
+  bio: string;
+  location: string;
+  instagram?: string;
+  website?: string;
+};
+
+export type Preset = {
+  id: string;
+  slug: string;
+  name: string;
+  category: Category;
+  tags: string[];
+  price: number;
+  isFree: boolean;
+  coverImage: string;
+  description: string;
+  includes: { desktop: number; mobile: number };
+  formats: string[];
+  creatorSlug: string;
+};
+
+export type Bundle = {
+  id: string;
+  slug: string;
+  name: string;
+  description: string;
+  coverImage: string;
+  presetSlugs: string[];
+  price: number;
+  originalPrice: number;
+};
+
+// ─── Creators ────────────────────────────────────────────────────────────────
+
+export const creators: Creator[] = [
+  {
+    slug: "thedarkroomm",
+    name: "The Darkroomm",
+    bio: "Lightroom presets built around mood, light, and feeling. Each pack owns one specific look and commits to it.",
+    location: "Montreal, QC",
+    instagram: "thedarkroomm",
+  },
+];
+
+// ─── Presets ─────────────────────────────────────────────────────────────────
+
+export const presets: Preset[] = [
+  // CINEMATIC
+  {
+    id: "1",
+    slug: "cinematic-film",
+    name: "Cinematic Film",
+    category: "cinematic",
+    tags: ["film", "warm", "shadows", "contrast"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/cinematic-film-cover.jpg",
+    description: "Deep shadows and lifted blacks. The color grade you've seen on screen but couldn't pin down.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "2",
+    slug: "cinematic-blue",
+    name: "Cinematic Blue",
+    category: "cinematic",
+    tags: ["cool", "teal", "desaturated", "modern"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/cinematic-blue-cover.jpg",
+    description: "Cool teal shadows, desaturated mids. Good for fashion, architecture, or anything that should feel cold.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "3",
+    slug: "cinematic-dark",
+    name: "Cinematic Dark",
+    category: "cinematic",
+    tags: ["dark", "moody", "contrast", "dramatic"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/cinematic-dark-cover.jpg",
+    description: "Heavy contrast, crushed blacks. For shots that need to feel like a movie still.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "4",
+    slug: "cinematic-green",
+    name: "Cinematic Green",
+    category: "cinematic",
+    tags: ["green", "teal", "nature", "muted"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/cinematic-green-cover.jpg",
+    description: "Muted greens and faded tones. Works well in forests, fields, or anywhere with natural light.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "5",
+    slug: "cinematic-pink",
+    name: "Cinematic Pink",
+    category: "cinematic",
+    tags: ["pink", "soft", "warm", "portrait"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/cinematic-pink-cover.jpg",
+    description: "Soft pink tones with warm highlights. Built for portraits and golden hour.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+
+  // MOODY
+  {
+    id: "6",
+    slug: "moody",
+    name: "Moody Collection",
+    category: "moody",
+    tags: ["dark", "atmospheric", "shadows", "overcast"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/moody-cover.jpg",
+    description: "Heavy, atmospheric tones. Works well in overcast light, fog, or anything shot after golden hour.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "7",
+    slug: "moody-fog",
+    name: "Moody Fog",
+    category: "moody",
+    tags: ["fog", "mist", "overcast", "landscape", "atmospheric"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/moody-fog-cover.jpg",
+    description: "Fog, overcast skies, that hour before the light gives up. Built on the conditions most presets struggle with.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "8",
+    slug: "moody-retro",
+    name: "Moody Retro",
+    category: "moody",
+    tags: ["retro", "faded", "warm", "vintage", "dark"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/moody-retro-cover.jpg",
+    description: "Faded tones with a retro warmth. Sits between moody and vintage — somewhere in the late afternoon.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+
+  // URBAN
+  {
+    id: "9",
+    slug: "urban-paris",
+    name: "Urban Paris",
+    category: "urban",
+    tags: ["paris", "street", "film", "soft", "muted"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-paris-cover.jpg",
+    description: "Soft, desaturated film tones. Made for city streets, but it handles portraits just as well.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "10",
+    slug: "urban-tokyo",
+    name: "Urban Tokyo",
+    category: "urban",
+    tags: ["tokyo", "neon", "night", "cool", "street"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-tokyo-cover.jpg",
+    description: "Cool, high-contrast tones with a slight neon cast. Made for night streets and artificial light.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "11",
+    slug: "urban-berlin",
+    name: "Urban Berlin",
+    category: "urban",
+    tags: ["berlin", "street", "grey", "concrete", "raw"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-berlin-cover.jpg",
+    description: "Grey, raw, concrete. Matches the city it's named after — no warmth, no softening.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "12",
+    slug: "urban-london",
+    name: "Urban London",
+    category: "urban",
+    tags: ["london", "street", "overcast", "muted", "cool"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-london-cover.jpg",
+    description: "Muted and cool, like a grey London morning. Works in overcast conditions better than most.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "13",
+    slug: "urban-newyork",
+    name: "Urban New York",
+    category: "urban",
+    tags: ["new york", "street", "contrast", "gritty"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-newyork-cover.jpg",
+    description: "High contrast, gritty and direct. Built for the kind of streets that don't slow down.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "14",
+    slug: "urban-hongkong",
+    name: "Urban Hong Kong",
+    category: "urban",
+    tags: ["hong kong", "night", "neon", "dense", "street"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-hongkong-cover.jpg",
+    description: "Dense, layered, neon-soaked. For cities that feel like they're always on.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "15",
+    slug: "urban-mexico",
+    name: "Urban Mexico",
+    category: "urban",
+    tags: ["mexico", "warm", "vibrant", "street", "color"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-mexico-cover.png",
+    description: "Warm and saturated with punchy shadows. For colorful streets and bright midday sun.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "16",
+    slug: "urban-sf",
+    name: "Urban San Francisco",
+    category: "urban",
+    tags: ["san francisco", "fog", "cool", "street"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-sf-cover.jpg",
+    description: "Foggy, cool-toned, slightly overcast. The light you get when the marine layer rolls in.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "17",
+    slug: "urban-teal",
+    name: "Urban Teal & Warmth",
+    category: "urban",
+    tags: ["teal", "warm", "split tone", "street", "portrait"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/urban-teal-cover.png",
+    description: "The classic teal and orange split, done right. Works on streets and portraits without looking overdone.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "18",
+    slug: "urban-master",
+    name: "Urban Master Collection",
+    category: "urban",
+    tags: ["street", "versatile", "all cities", "bundle"],
+    price: 49,
+    isFree: false,
+    coverImage: "/presets/urban-master-cover.jpg",
+    description: "Every urban pack in one. 60+ presets covering every city mood.",
+    includes: { desktop: 60, mobile: 60 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+
+  // LANDSCAPE
+  {
+    id: "19",
+    slug: "landscape-golden",
+    name: "Landscape Golden Hour",
+    category: "landscape",
+    tags: ["golden hour", "warm", "sunset", "travel"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-golden-cover.jpg",
+    description: "Warm tones that don't go orange. Built on landscape and travel shots across three continents.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "20",
+    slug: "landscape-bali",
+    name: "Landscape Bali",
+    category: "landscape",
+    tags: ["tropical", "warm", "green", "travel", "bali"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-bali-cover.jpg",
+    description: "Lush greens and warm skies. Tuned for tropical light where everything is a bit too saturated.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "21",
+    slug: "landscape-beach",
+    name: "Landscape Beach",
+    category: "landscape",
+    tags: ["beach", "ocean", "blue", "bright", "summer"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-beach-cover.jpg",
+    description: "Bright blues, clean whites. For coastlines and open skies without blowing out the highlights.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "22",
+    slug: "landscape-forest",
+    name: "Landscape Forest",
+    category: "landscape",
+    tags: ["forest", "green", "nature", "moody", "shadows"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-forest-cover.png",
+    description: "Deep greens and dark shadows. For dense forests and tree canopy light.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "23",
+    slug: "landscape-nordic",
+    name: "Landscape Nordic",
+    category: "landscape",
+    tags: ["nordic", "cold", "blue", "winter", "minimalist"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-nordic-cover.png",
+    description: "Cold, blue-grey tones with clean shadows. Built for winter, mountains, and open sky.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "24",
+    slug: "landscape-hawai",
+    name: "Landscape Hawaii",
+    category: "landscape",
+    tags: ["hawaii", "tropical", "warm", "ocean", "volcanic"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-hawai-cover.jpg",
+    description: "Tropical warmth without the oversaturation. Tuned on Hawaiian coastline and volcanic terrain.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "25",
+    slug: "landscape",
+    name: "Landscape Collection",
+    category: "landscape",
+    tags: ["landscape", "versatile", "nature", "travel"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/landscape-cover.jpg",
+    description: "The core landscape pack. Versatile enough for any outdoor shot, specific enough to have a look.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "26",
+    slug: "landscape-master",
+    name: "Landscape Master Collection",
+    category: "landscape",
+    tags: ["landscape", "versatile", "all terrain", "master"],
+    price: 49,
+    isFree: false,
+    coverImage: "/presets/landscape-master-cover.jpg",
+    description: "Every landscape pack in one. 70+ presets covering every terrain and light condition.",
+    includes: { desktop: 70, mobile: 70 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+
+  // VINTAGE
+  {
+    id: "27",
+    slug: "vintage-film",
+    name: "Vintage Film",
+    category: "vintage",
+    tags: ["film", "grain", "analog", "faded"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-film-cover.png",
+    description: "Grain and faded highlights. Looks like old film without looking like a filter.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "28",
+    slug: "vintage-35mm",
+    name: "Vintage 35MM",
+    category: "vintage",
+    tags: ["35mm", "grain", "analog", "film", "sharp"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-35mm-cover.jpg",
+    description: "The grain and contrast of a 35mm roll. Close to real film without the unpredictability.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "29",
+    slug: "vintage-80s",
+    name: "Vintage 80's",
+    category: "vintage",
+    tags: ["80s", "warm", "faded", "pastel", "retro"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-80s-cover.jpg",
+    description: "Faded pastels and warm highlights. The kind of photo you'd find in an old shoebox.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "30",
+    slug: "vintage-90s",
+    name: "Vintage 90's",
+    category: "vintage",
+    tags: ["90s", "disposable", "grain", "faded", "retro"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-90s-cover.jpg",
+    description: "Disposable camera grain and color shifts. For the era of photos you couldn't delete.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "31",
+    slug: "vintage-analog",
+    name: "Vintage Analog",
+    category: "vintage",
+    tags: ["analog", "warm", "grain", "film", "soft"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-analog-cover.png",
+    description: "Soft analog warmth with a natural grain. Feels less processed than most film presets.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "32",
+    slug: "vintage-expired",
+    name: "Vintage Expired Film",
+    category: "vintage",
+    tags: ["expired film", "color shift", "grain", "unpredictable"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-expired-cover.jpg",
+    description: "Color shifts and unpredictable tones that come from shooting past the expiry date.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "33",
+    slug: "vintage-summer",
+    name: "Vintage Summer Film",
+    category: "vintage",
+    tags: ["summer", "warm", "bright", "faded", "nostalgic"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-summer-cover.jpg",
+    description: "Bright, warm, and slightly overexposed — the way summer looks in memory.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "34",
+    slug: "vintage-warm-analog",
+    name: "Vintage Warm Analog",
+    category: "vintage",
+    tags: ["warm", "analog", "golden", "portrait", "soft"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-warm-analog-cover.jpg",
+    description: "Golden and warm without going yellow. The sweet spot between analog and clean.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "35",
+    slug: "vintage-warm",
+    name: "Vintage Warm",
+    category: "vintage",
+    tags: ["warm", "soft", "portrait", "lifestyle"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-warm-cover.jpg",
+    description: "Clean warmth with a vintage tint. Works across portraits, lifestyle, and travel.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "36",
+    slug: "vintage",
+    name: "Vintage Collection",
+    category: "vintage",
+    tags: ["vintage", "film", "analog", "versatile"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-cover.jpg",
+    description: "The core vintage pack. A starting point for anyone who wants the film look without committing to a decade.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+  {
+    id: "37",
+    slug: "vintage-film2",
+    name: "Vintage Film II",
+    category: "vintage",
+    tags: ["film", "grain", "analog", "cool", "faded"],
+    price: 24,
+    isFree: false,
+    coverImage: "/presets/vintage-film2-cover.png",
+    description: "A cooler, slightly muted follow-up to the original Film pack. More blue in the shadows.",
+    includes: { desktop: 12, mobile: 12 },
+    formats: ["XMP", "DNG"],
+    creatorSlug: "thedarkroomm",
+  },
+];
+
+// ─── Bundles ─────────────────────────────────────────────────────────────────
+
+export const bundles: Bundle[] = [
+  {
+    id: "b1",
+    slug: "cinematic-bundle",
+    name: "The Cinematic Bundle",
+    description: "All 5 cinematic packs in one. 60 desktop + 60 mobile presets.",
+    coverImage: "/presets/cinematic-film-cover.jpg",
+    presetSlugs: ["cinematic-film", "cinematic-blue", "cinematic-dark", "cinematic-green", "cinematic-pink"],
+    price: 69,
+    originalPrice: 120,
+  },
+  {
+    id: "b2",
+    slug: "vintage-bundle",
+    name: "The Vintage Bundle",
+    description: "Every vintage pack. From 35mm grain to expired film shifts.",
+    coverImage: "/presets/vintage-film-cover.png",
+    presetSlugs: ["vintage-film", "vintage-35mm", "vintage-80s", "vintage-90s", "vintage-analog", "vintage-expired", "vintage-summer", "vintage-warm-analog", "vintage-warm", "vintage", "vintage-film2"],
+    price: 99,
+    originalPrice: 264,
+  },
+  {
+    id: "b3",
+    slug: "urban-bundle",
+    name: "The Urban Bundle",
+    description: "Every city. Every mood. The full urban collection.",
+    coverImage: "/presets/urban-paris-cover.jpg",
+    presetSlugs: ["urban-paris", "urban-tokyo", "urban-berlin", "urban-london", "urban-newyork", "urban-hongkong", "urban-mexico", "urban-sf", "urban-teal"],
+    price: 89,
+    originalPrice: 216,
+  },
+];
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+
+export function getPresetBySlug(slug: string): Preset | undefined {
+  return presets.find((p) => p.slug === slug);
+}
+
+export function getPresetsByCategory(category: Category): Preset[] {
+  return presets.filter((p) => p.category === category);
+}
+
+export function getCreatorBySlug(slug: string): Creator | undefined {
+  return creators.find((c) => c.slug === slug);
+}
+
+export function getPresetsByCreator(creatorSlug: string): Preset[] {
+  return presets.filter((p) => p.creatorSlug === creatorSlug);
+}
+
+export function getBundleBySlug(slug: string): Bundle | undefined {
+  return bundles.find((b) => b.slug === slug);
+}
+
+export const categories: { slug: Category; label: string; description: string }[] = [
+  { slug: "cinematic", label: "Cinematic", description: "Cinema-grade color grading for dramatic, filmic shots." },
+  { slug: "moody", label: "Moody", description: "Heavy, atmospheric tones for overcast and low-light conditions." },
+  { slug: "urban", label: "Urban", description: "Street and city photography across 9 cities worldwide." },
+  { slug: "landscape", label: "Landscape", description: "Nature, travel, and outdoor photography in every terrain." },
+  { slug: "vintage", label: "Vintage", description: "Analog film looks from 35mm to expired stock." },
+];

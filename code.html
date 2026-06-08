@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Work+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "inverse-surface": "#2f3131",
+                  "secondary-fixed-dim": "#c6c7c0",
+                  "inverse-primary": "#c6c6c6",
+                  "on-secondary-fixed-variant": "#464742",
+                  "surface-variant": "#e3e2e2",
+                  "surface-container-highest": "#e3e2e2",
+                  "background": "#faf9f9",
+                  "on-surface-variant": "#4c4546",
+                  "surface-bright": "#faf9f9",
+                  "secondary-fixed": "#e3e3dc",
+                  "on-primary-container": "#848484",
+                  "surface-container": "#eeeeed",
+                  "on-surface": "#1a1c1c",
+                  "on-error": "#ffffff",
+                  "on-primary": "#ffffff",
+                  "surface-dim": "#dadada",
+                  "primary-fixed-dim": "#c6c6c6",
+                  "surface-tint": "#5e5e5e",
+                  "secondary": "#5d5f5a",
+                  "on-tertiary-container": "#848484",
+                  "on-tertiary": "#ffffff",
+                  "error-container": "#ffdad6",
+                  "tertiary-fixed-dim": "#c7c6c6",
+                  "on-secondary": "#ffffff",
+                  "secondary-container": "#e3e3dc",
+                  "primary-fixed": "#e2e2e2",
+                  "tertiary-fixed": "#e3e2e2",
+                  "outline-variant": "#cfc4c5",
+                  "on-background": "#1a1c1c",
+                  "surface-container-low": "#f4f3f3",
+                  "error": "#ba1a1a",
+                  "primary": "#000000",
+                  "on-primary-fixed-variant": "#474747",
+                  "surface-container-high": "#e9e8e8",
+                  "on-secondary-fixed": "#1a1c18",
+                  "on-error-container": "#93000a",
+                  "on-secondary-container": "#636560",
+                  "tertiary-container": "#1b1c1c",
+                  "surface-container-lowest": "#ffffff",
+                  "outline": "#7e7576",
+                  "inverse-on-surface": "#f1f0f0",
+                  "surface": "#faf9f9",
+                  "primary-container": "#1b1b1b",
+                  "on-tertiary-fixed-variant": "#464747",
+                  "tertiary": "#000000",
+                  "on-primary-fixed": "#1b1b1b",
+                  "on-tertiary-fixed": "#1b1c1c"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "stack-md": "16px",
+                  "stack-lg": "32px",
+                  "margin-mobile": "20px",
+                  "unit": "4px",
+                  "section-gap": "128px",
+                  "margin-desktop": "64px",
+                  "stack-sm": "8px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "label-caps": ["Work Sans"],
+                  "headline-md": ["Newsreader"],
+                  "body-lg": ["Work Sans"],
+                  "headline-lg": ["Newsreader"],
+                  "display-xl": ["Newsreader"],
+                  "body-md": ["Work Sans"],
+                  "ui-button": ["Work Sans"],
+                  "display-lg": ["Newsreader"]
+          },
+          "fontSize": {
+                  "label-caps": ["12px", {"lineHeight": "140%", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "headline-md": ["32px", {"lineHeight": "120%", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                  "body-lg": ["18px", {"lineHeight": "160%", "letterSpacing": "0em", "fontWeight": "400"}],
+                  "headline-lg": ["48px", {"lineHeight": "110%", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                  "display-xl": ["120px", {"lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                  "body-md": ["16px", {"lineHeight": "160%", "letterSpacing": "0em", "fontWeight": "400"}],
+                  "ui-button": ["14px", {"lineHeight": "100%", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                  "display-lg": ["80px", {"lineHeight": "105%", "letterSpacing": "-0.03em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #faf9f9; /* Surface */
+      color: #1a1c1c; /* On-Surface */
+    }
+    .ultra-fine-border {
+      border-width: 0.5px;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar Section -->
+<nav class="fixed top-0 w-full z-50 bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline flat no shadows transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-inverse-primary" href="#">STUDIO ARCHIVE</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-ui-button text-ui-button uppercase tracking-widest hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Work</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-ui-button text-ui-button uppercase tracking-widest hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Studio</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-ui-button text-ui-button uppercase tracking-widest hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Journal</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-ui-button text-ui-button uppercase tracking-widest hover:text-primary dark:hover:text-inverse-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-stack-md">
+<button class="px-stack-lg py-unit border border-primary text-primary font-ui-button text-ui-button uppercase hover:bg-primary hover:text-on-primary transition-all duration-300">
+          Inquiry
+        </button>
+</div>
+</div>
+</nav>
+<!-- Hero Canvas -->
+<main class="pt-20">
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop min-h-screen flex flex-col">
+<!-- Top Meta Info / Header Divider -->
+<div class="mt-stack-lg flex flex-col md:flex-row justify-between items-start md:items-end border-b border-outline-variant pb-stack-sm mb-stack-lg">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-unit">ISSUE NO. 04</span>
+<span class="font-label-caps text-label-caps text-on-surface">WINTER ARCHIVE 2024</span>
+</div>
+<div class="hidden md:block">
+<span class="font-label-caps text-label-caps text-on-surface-variant">CURATED NARRATIVES IN FORM &amp; SPACE</span>
+</div>
+</div>
+<!-- Main Headline Block -->
+<div class="grid grid-cols-12 gap-gutter mb-section-gap">
+<div class="col-span-12 lg:col-span-10">
+<h1 class="font-display-xl text-display-xl tracking-tighter text-primary leading-none">
+            The Architecture of Silence
+          </h1>
+</div>
+<div class="col-span-12 lg:col-span-4 lg:col-start-9 mt-stack-md">
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Exploring the profound intersection of light, shadow, and minimalist geometry in contemporary structural design. A visual meditation on the spaces we inhabit.
+          </p>
+</div>
+</div>
+<!-- Primary Visual Container -->
+<div class="relative w-full aspect-[16/9] lg:aspect-[21/9] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out cursor-crosshair group">
+<img alt="Editorial Architecture" class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out" src="https://lh3.googleusercontent.com/aida/ADBb0uifZ3V3LD08SbjDea2VNQfzSiy8HtKjEuwT6CbhabYBdnTHoF3BTXBqxzeNbOjnalDPhrB_V5ERHklY7Jpqk0QXKTU_O27o7hebicNb5dnsgd2Ti-P7bUunQqi5wMGLVjp_i9Rw5RIMogHj_QXqlUViboPqRopSNCuG2zpG4Lxp8wS5o3ZvFKFXenmM-Pn586OXMo8kpRpge67SgG-aJqG1mAMiAuVoZQO1K8eF4hCx5VisBF5cBL7C41jg73Nwsw3sd67IfhaXNw"/>
+<!-- Floating Label on Image -->
+<div class="absolute bottom-stack-lg left-stack-lg bg-surface px-stack-md py-stack-sm ultra-fine-border border-primary">
+<span class="font-label-caps text-label-caps text-primary">01 / ARCHIVE VISUAL</span>
+</div>
+</div>
+<!-- Secondary Info Section (Asymmetric Layout) -->
+<div class="grid grid-cols-12 gap-gutter mt-stack-lg pt-stack-lg border-t border-outline-variant">
+<div class="col-span-12 md:col-span-3 border-r border-outline-variant pr-gutter mb-stack-lg md:mb-0">
+<h3 class="font-label-caps text-label-caps mb-stack-md text-primary">FEATURED STORY</h3>
+<p class="font-body-md text-body-md text-on-surface">The restraint of the grid dictates the rhythm of the narrative.</p>
+</div>
+<div class="col-span-12 md:col-span-5 md:col-start-5 mb-stack-lg md:mb-0">
+<h3 class="font-label-caps text-label-caps mb-stack-md text-primary">PERSPECTIVE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            In the quietude of modernism, we find a new language. This edition delves into the works of those who define space not by what is added, but by what is removed. A journey through stark concrete, translucent glass, and the void.
+          </p>
+<a class="inline-flex items-center gap-unit mt-stack-md font-ui-button text-ui-button border-b border-primary pb-unit hover:gap-stack-sm transition-all duration-300" href="#">
+            READ THE MONOGRAPH
+            <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<div class="col-span-12 md:col-span-2 md:col-start-11 flex flex-col justify-end">
+<div class="flex gap-stack-sm justify-end md:justify-start">
+<span class="font-label-caps text-label-caps text-on-surface-variant rotate-90 md:rotate-0 origin-right">EST. 2024</span>
+<div class="h-12 w-[1px] bg-outline"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Divider Pause -->
+<div class="h-section-gap flex items-center justify-center">
+<div class="w-[1px] h-16 bg-outline-variant"></div>
+</div>
+<!-- Editorial Cards Section (Bento Inspired / Asymmetric) -->
+<section class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Small Card Left -->
+<div class="col-span-12 md:col-span-4 flex flex-col gap-stack-md">
+<div class="w-full aspect-square bg-surface-container overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="A minimalist interior scene featuring a single designer lamp casting soft shadows on an off-white wall. The composition is clean and editorial, using a neutral palette of creams and blacks. The lighting is diffused, creating a serene and sophisticated atmosphere consistent with a luxury design journal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx4PE6F3kaTMr1kzjjFl48bo352ihuf5jfBr0XX_XmpgH2jLDM6Lnc4C_CIWy8UFk24MiHbe0D0Uejpu10-tD-HJDF_pDw2v4GT-1_N70MNhTp-Il0xTgpSq0ffhrS7ew5QKcDRvIFfv0k3Vit_DfXnrbnVeCX37oKkpyyHttdezk-6qk_lpo_CP4y_Rb96PW4TmuvjLhPI8ZWARMzl5XrK-yB0kUQ_cDM9JmSVx7dzH_9rjESuhdoPYB5VaWZin_rO2wZEvyKD6c"/>
+</div>
+<div class="pt-unit">
+<span class="font-label-caps text-label-caps text-on-surface-variant">02 / LIGHTING</span>
+<h4 class="font-headline-md text-headline-md mt-unit">Softened Gradients</h4>
+</div>
+</div>
+<!-- Large Card Right -->
+<div class="col-span-12 md:col-span-7 md:col-start-6 flex flex-col gap-stack-md">
+<div class="pt-stack-lg border-t border-primary mb-stack-lg">
+<h2 class="font-headline-lg text-headline-lg leading-tight">Finding clarity within the brutalist structure of modern living.</h2>
+</div>
+<div class="w-full aspect-[4/3] bg-surface-container-high overflow-hidden grayscale">
+<img class="w-full h-full object-cover" data-alt="A dramatic low-angle shot of a brutalist concrete staircase spiraling upwards toward a skylight. The lighting is high-contrast, with sharp sunlight hitting the gray concrete textures while deep shadows fill the recesses. The visual style is stark, geometric, and evocative of high-end architectural monographs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEP4GBAdagezu-hQFeMYMago8_ZTOJzG8wohW-VHE1N_Je77AuAq3HV2n2xsnwD791_moWRDX3zkL9EBDsKPf8fC2d4hds-m7BWYnneDG8GURKAdlVvNT07sxX5n4dibErrvQeYfmkaZN7iMEvpfpIIa0f7kt7qdZZPxTwzfIpyPvH4gh-7RWlegP7R4bBx8pVnJ_j1Ds40VbKh_XC74yMlF25qgmaxALB8crjuLuMOdjj8IozWM7y3FpcV3LwJl3oqft62W4AvnQ"/>
+</div>
+<div class="grid grid-cols-2 gap-gutter mt-stack-md">
+<p class="font-body-md text-body-md">The permanence of stone versus the transience of light. A study in material honesty and structural integrity.</p>
+<div class="flex justify-end items-end">
+<button class="font-ui-button text-ui-button uppercase border border-primary px-stack-lg py-stack-md hover:bg-primary hover:text-on-primary transition-colors duration-300">
+                 Explore Archive
+               </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="w-full border-t border-outline-variant dark:border-outline mt-section-gap bg-surface dark:bg-inverse-surface">
+<div class="flex flex-col md:flex-row justify-between items-center py-stack-lg px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto opacity-80 hover:opacity-100 transition-opacity">
+<div class="font-label-caps text-label-caps font-bold text-primary dark:text-inverse-primary mb-stack-md md:mb-0">
+        STUDIO ARCHIVE
+      </div>
+<div class="flex flex-col md:flex-row gap-stack-md items-center mb-stack-md md:mb-0">
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps text-label-caps hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Privacy</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps text-label-caps hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Terms</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps text-label-caps hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">Instagram</a>
+<a class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps text-label-caps hover:text-primary dark:hover:text-inverse-primary underline transition-all" href="#">LinkedIn</a>
+</div>
+<div class="text-on-surface-variant dark:text-secondary-fixed-dim font-label-caps text-label-caps">
+        © 2024 STUDIO ARCHIVE. ALL RIGHTS RESERVED.
+      </div>
+</div>
+</footer>
+</body></html>
