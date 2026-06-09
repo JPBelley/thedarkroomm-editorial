@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import BeforeAfterSlider from "./BeforeAfterSlider";
 
 export default function Hero() {
   return (
@@ -51,24 +51,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Hero image */}
-      <div className="relative w-full aspect-[16/9] lg:aspect-[21/9] overflow-hidden group cursor-crosshair">
-        <Image
-          src="/presets/cinematic-film-cover.jpg"
-          alt="Cinematic Film preset applied to a dramatic landscape"
-          fill
-          className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000 ease-out grayscale-[20%] group-hover:grayscale-0"
-          priority
-        />
-        {/* Floating label */}
-        <div className="absolute bottom-6 left-6 bg-surface border-ultra border-primary px-4 py-2">
-          <span className="text-label-caps text-primary">01 / Cinematic Film</span>
-        </div>
-        {/* Pack count badge */}
-        <div className="absolute top-6 right-6 bg-primary text-on-primary px-4 py-2">
-          <span className="text-label-caps">100+ Presets</span>
-        </div>
-      </div>
+      {/* Hero before/after slider */}
+      <BeforeAfterSlider
+        before="/presets/vintage-80s-8-before.jpg"
+        after="/presets/vintage-80s-8-after.jpg"
+        beforeAlt="Original photo"
+        afterAlt="Vintage 80's preset applied"
+        objectPosition="center bottom"
+      />
 
       {/* Sub-info strip */}
       <div className="grid grid-cols-12 gap-6 mt-6 pt-6 border-t border-outline-variant">

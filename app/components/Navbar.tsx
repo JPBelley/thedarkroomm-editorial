@@ -40,6 +40,7 @@ export default function Navbar() {
             { label: "Bundles", href: "/bundles" },
             { label: "Creators", href: "/creators/thedarkroomm" },
             { label: "Free Preset", href: "/newsletter", reload: true },
+            { label: "Sell", href: "/sell" },
           ].map((item) =>
             item.reload ? (
               <a
