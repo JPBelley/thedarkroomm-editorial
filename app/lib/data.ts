@@ -21,6 +21,9 @@ export type Preset = {
   tags: string[];
   price: number;
   isFree: boolean;
+  isBestSeller?: boolean;
+  unlisted?: boolean;
+  etsyLink?: string;
   coverImage: string;
   description: string;
   includes: { desktop: number; mobile: number };
@@ -65,9 +68,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/cinematic-film-cover.jpg",
     description: "Deep shadows and lifted blacks. The color grade you've seen on screen but couldn't pin down.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    unlisted: true
   },
   {
     id: "2",
@@ -79,9 +83,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/cinematic-blue-cover.jpg",
     description: "Cool teal shadows, desaturated mids. Good for fashion, architecture, or anything that should feel cold.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1838508074"
   },
   {
     id: "3",
@@ -93,9 +98,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/cinematic-dark-cover.jpg",
     description: "Heavy contrast, crushed blacks. For shots that need to feel like a movie still.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1880654115"
   },
   {
     id: "4",
@@ -107,9 +113,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/cinematic-green-cover.jpg",
     description: "Muted greens and faded tones. Works well in forests, fields, or anywhere with natural light.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1842233178"
   },
   {
     id: "5",
@@ -121,9 +128,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/cinematic-pink-cover.jpg",
     description: "Soft pink tones with warm highlights. Built for portraits and golden hour.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4361659747"
   },
 
   // MOODY
@@ -137,9 +145,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/moody-cover.jpg",
     description: "Heavy, atmospheric tones. Works well in overcast light, fog, or anything shot after golden hour.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1872613423"
   },
   {
     id: "7",
@@ -151,9 +160,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/moody-fog-cover.jpg",
     description: "Fog, overcast skies, that hour before the light gives up. Built on the conditions most presets struggle with.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4343403613"
   },
   {
     id: "8",
@@ -165,9 +175,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/moody-retro-cover.jpg",
     description: "Faded tones with a retro warmth. Sits between moody and vintage — somewhere in the late afternoon.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4455351092"
   },
 
   // URBAN
@@ -181,9 +192,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-paris-cover.jpg",
     description: "Soft, desaturated film tones. Made for city streets, but it handles portraits just as well.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4300279004"
   },
   {
     id: "10",
@@ -195,9 +207,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-tokyo-cover.jpg",
     description: "Cool, high-contrast tones with a slight neon cast. Made for night streets and artificial light.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4322881888"
   },
   {
     id: "11",
@@ -209,9 +222,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-berlin-cover.jpg",
     description: "Grey, raw, concrete. Matches the city it's named after — no warmth, no softening.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1906155467"
   },
   {
     id: "12",
@@ -223,9 +237,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-london-cover.jpg",
     description: "Muted and cool, like a grey London morning. Works in overcast conditions better than most.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1896100007"
   },
   {
     id: "13",
@@ -237,9 +252,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-newyork-cover.jpg",
     description: "High contrast, gritty and direct. Built for the kind of streets that don't slow down.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1794541809"
   },
   {
     id: "14",
@@ -251,9 +267,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-hongkong-cover.jpg",
     description: "Dense, layered, neon-soaked. For cities that feel like they're always on.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4355034483"
   },
   {
     id: "15",
@@ -265,9 +282,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-mexico-cover.png",
     description: "Warm and saturated with punchy shadows. For colorful streets and bright midday sun.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4450014103"
   },
   {
     id: "16",
@@ -279,9 +297,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-sf-cover.jpg",
     description: "Foggy, cool-toned, slightly overcast. The light you get when the marine layer rolls in.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4339270736"
   },
   {
     id: "17",
@@ -293,9 +312,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/urban-teal-cover.png",
     description: "The classic teal and orange split, done right. Works on streets and portraits without looking overdone.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4412028150"
   },
   {
     id: "18",
@@ -310,6 +330,7 @@ export const presets: Preset[] = [
     includes: { desktop: 60, mobile: 60 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    unlisted: true
   },
 
   // LANDSCAPE
@@ -323,9 +344,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/landscape-golden-cover.jpg",
     description: "Warm tones that don't go orange. Built on landscape and travel shots across three continents.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4513332617"
   },
   {
     id: "20",
@@ -337,9 +359,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/landscape-bali-cover.jpg",
     description: "Lush greens and warm skies. Tuned for tropical light where everything is a bit too saturated.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4303233411"
   },
   {
     id: "21",
@@ -351,9 +374,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/landscape-beach-cover.jpg",
     description: "Bright blues, clean whites. For coastlines and open skies without blowing out the highlights.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4395578165"
   },
   {
     id: "22",
@@ -365,9 +389,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/landscape-forest-cover.png",
     description: "Deep greens and dark shadows. For dense forests and tree canopy light.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4452656859"
   },
   {
     id: "23",
@@ -375,13 +400,14 @@ export const presets: Preset[] = [
     name: "Landscape Nordic",
     category: "landscape",
     tags: ["nordic", "cold", "blue", "winter", "minimalist"],
-    price: 5,
+    price: 6,
     isFree: false,
     coverImage: "/presets/landscape-nordic-cover.png",
     description: "Cold, blue-grey tones with clean shadows. Built for winter, mountains, and open sky.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 20, mobile: 20 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4418096499"
   },
   {
     id: "24",
@@ -393,9 +419,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/landscape-hawai-cover.jpg",
     description: "Tropical warmth without the oversaturation. Tuned on Hawaiian coastline and volcanic terrain.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4313127465"
   },
   {
     id: "25",
@@ -407,9 +434,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/landscape-cover.jpg",
     description: "The core landscape pack. Versatile enough for any outdoor shot, specific enough to have a look.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1819820658"
   },
   {
     id: "26",
@@ -417,13 +445,14 @@ export const presets: Preset[] = [
     name: "Landscape Master Collection",
     category: "landscape",
     tags: ["landscape", "versatile", "all terrain", "master"],
-    price: 5,
+    price: 25,
     isFree: false,
     coverImage: "/presets/landscape-master-cover.jpg",
     description: "Every landscape pack in one. 70+ presets covering every terrain and light condition.",
-    includes: { desktop: 70, mobile: 70 },
+    includes: { desktop: 350, mobile: 350 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    unlisted: true
   },
 
   // VINTAGE
@@ -437,9 +466,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-film-cover.png",
     description: "Grain and faded highlights. Looks like old film without looking like a filter.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1868500317"
   },
   {
     id: "28",
@@ -451,9 +481,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-35mm-cover.jpg",
     description: "The grain and contrast of a 35mm roll. Close to real film without the unpredictability.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    unlisted: true
   },
   {
     id: "29",
@@ -463,11 +494,13 @@ export const presets: Preset[] = [
     tags: ["80s", "warm", "faded", "pastel", "retro"],
     price: 5,
     isFree: false,
+    isBestSeller: true,
     coverImage: "/presets/vintage-80s-cover.jpg",
     description: "Faded pastels and warm highlights. The kind of photo you'd find in an old shoebox.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4387759848"
   },
   {
     id: "30",
@@ -479,9 +512,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-90s-cover.jpg",
     description: "Disposable camera grain and color shifts. For the era of photos you couldn't delete.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1836255354"
   },
   {
     id: "31",
@@ -493,9 +527,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-analog-cover.png",
     description: "Soft analog warmth with a natural grain. Feels less processed than most film presets.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4469836963"
   },
   {
     id: "32",
@@ -507,9 +542,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-expired-cover.jpg",
     description: "Color shifts and unpredictable tones that come from shooting past the expiry date.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4516146143"
   },
   {
     id: "33",
@@ -521,9 +557,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-summer-cover.jpg",
     description: "Bright, warm, and slightly overexposed — the way summer looks in memory.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4512807268"
   },
   {
     id: "34",
@@ -535,9 +572,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-warm-analog-cover.jpg",
     description: "Golden and warm without going yellow. The sweet spot between analog and clean.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4484150319"
   },
   {
     id: "35",
@@ -549,9 +587,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-warm-cover.jpg",
     description: "Clean warmth with a vintage tint. Works across portraits, lifestyle, and travel.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4440800685"
   },
   {
     id: "36",
@@ -563,9 +602,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-cover.jpg",
     description: "The core vintage pack. A starting point for anyone who wants the film look without committing to a decade.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1868500317"
   },
   {
     id: "37",
@@ -577,9 +617,10 @@ export const presets: Preset[] = [
     isFree: false,
     coverImage: "/presets/vintage-film2-cover.png",
     description: "A cooler, slightly muted follow-up to the original Film pack. More blue in the shadows.",
-    includes: { desktop: 12, mobile: 12 },
+    includes: { desktop: 10, mobile: 10 },
     formats: ["XMP", "DNG"],
     creatorSlug: "thedarkroomm",
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/4402651604"
   },
   {
     id: "38",
@@ -589,6 +630,7 @@ export const presets: Preset[] = [
     tags: ["earthy", "warm", "natural", "outdoor", "free"],
     price: 0,
     isFree: true,
+    unlisted: true,
     coverImage: "/presets/earth-cover.jpg",
     description: "Warm, earthy tones built on natural light. Greens that stay green, skies that stay honest. Free with your newsletter subscription.",
     includes: { desktop: 6, mobile: 5 },
@@ -632,7 +674,16 @@ export const bundles: Bundle[] = [
   },
 ];
 
+// ─── Editorial picks ─────────────────────────────────────────────────────────
+// Change this slug to swap what shows on the home page best seller section.
+
+export const BEST_SELLER_SLUG = "vintage-80s";
+
 // ─── Helpers ─────────────────────────────────────────────────────────────────
+
+export function getListedPresets(): Preset[] {
+  return presets.filter((p) => !p.unlisted);
+}
 
 export function getPresetBySlug(slug: string): Preset | undefined {
   return presets.find((p) => p.slug === slug);

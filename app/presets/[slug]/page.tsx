@@ -65,7 +65,15 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
             <div>
               <p className="text-label-caps text-on-surface-variant mb-4 capitalize">{preset.category}</p>
               <h1 className="text-display-lg text-primary mb-6">{preset.name}</h1>
-              <p className="text-body-lg text-on-surface-variant mb-10">{preset.description}</p>
+              <p className="text-body-lg text-on-surface-variant mb-4">{preset.description}</p>
+              {preset.etsyLink && (
+                <span className="inline-flex items-center gap-1.5 text-label-caps border border-outline-variant px-2.5 py-1 mb-8 text-on-surface-variant">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor">
+                    <circle cx="5" cy="5" r="5" />
+                  </svg>
+                  Available on Etsy
+                </span>
+              )}
 
               {/* Pack details */}
               <div className="border-t border-outline-variant mb-8">
@@ -74,7 +82,7 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
                   ["Mobile presets", `${preset.includes.mobile} DNG files`],
                   ["Formats", preset.formats.join(" + ")],
                   ["Compatibility", "Lightroom Classic, CC, Mobile"],
-                  ["License", "Personal & Commercial"],
+                  // ["License", "Personal & Commercial"],
                 ].map(([label, value]) => (
                   <div key={label} className="flex justify-between items-center py-3 border-b border-outline-variant">
                     <span className="text-label-caps text-on-surface-variant">{label}</span>
@@ -101,9 +109,20 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
                 </span>
                 <span className="text-label-caps text-on-surface-variant">One-time purchase</span>
               </div>
-              <button className="w-full text-ui-button uppercase tracking-wider bg-primary text-on-primary py-4 hover:opacity-80 transition-opacity duration-300">
-                {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
-              </button>
+              {preset.etsyLink ? (
+                <a
+                  href={preset.etsyLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-ui-button uppercase tracking-wider bg-primary text-on-primary py-4 text-center hover:opacity-80 transition-opacity duration-300 block"
+                >
+                  {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
+                </a>
+              ) : (
+                <button className="w-full text-ui-button uppercase tracking-wider bg-primary text-on-primary py-4 hover:opacity-80 transition-opacity duration-300">
+                  {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
+                </button>
+              )}
               <Link
                 href="/bundles"
                 className="w-full text-ui-button uppercase tracking-wider border border-outline-variant py-4 text-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-300"

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { presets, categories, type Category } from "../lib/data";
+import { getListedPresets, categories, type Category } from "../lib/data";
 
 export const metadata = {
   title: "All Presets — The Darkroomm",
@@ -24,9 +24,10 @@ async function PresetsContent({
 }) {
   const params = await searchParams;
   const activeCategory = params.category as Category | undefined;
+  const listed = getListedPresets();
   const filtered = activeCategory
-    ? presets.filter((p) => p.category === activeCategory)
-    : presets;
+    ? listed.filter((p) => p.category === activeCategory)
+    : listed;
 
   return (
     <main className="bg-surface min-h-screen">

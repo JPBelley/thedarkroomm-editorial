@@ -6,6 +6,13 @@
 .ml-embedded .ml-form-embedWrapper {
   border-radius: 0 !important;
   box-shadow: none !important;
+  background: transparent !important;
+}
+
+.ml-embedded .ml-form-embedBody,
+.ml-embedded .ml-form-successBody {
+  background: transparent !important;
+  padding: 0 !important;
 }
 
 .ml-embedded input[type="email"],
