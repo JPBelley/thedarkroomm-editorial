@@ -68,9 +68,6 @@ export default function BundlesPage() {
                   <div>
                     <p className="text-label-caps text-on-surface-variant mb-1">Bundle price</p>
                     <p className="text-headline-lg text-primary">CA${bundle.price}</p>
-                    <p className="text-label-caps text-on-surface-variant mt-1 line-through">
-                      CA${bundle.originalPrice} separately
-                    </p>
                   </div>
                   <Link
                     href={`/bundles/${bundle.slug}`}

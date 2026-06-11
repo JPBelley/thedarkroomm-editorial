@@ -49,7 +49,7 @@ function CollectionCard({
         <span className="text-label-caps text-on-surface-variant whitespace-nowrap ml-4">CA${preset.price}</span>
       </div>
       <Link
-        href={`/collections/${preset.category}`}
+        href={`/presets/${preset.slug}`}
         className="inline-flex items-center gap-2 text-ui-button uppercase tracking-wider border-b border-primary pb-0.5 hover:gap-3 transition-all duration-300 w-fit"
       >
         Explore
