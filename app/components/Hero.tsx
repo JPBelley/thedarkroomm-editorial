@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Button from "./Button";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 
 export default function Hero() {
@@ -35,18 +35,8 @@ export default function Hero() {
             Lightroom presets built around mood, not just color. Desktop and mobile, one-click install.
           </p>
           <div className="flex flex-col gap-3">
-            <Link
-              href="/collections"
-              className="text-ui-button uppercase tracking-wider bg-primary text-on-primary px-6 py-4 text-center hover:opacity-80 transition-opacity duration-300"
-            >
-              Explore Collections
-            </Link>
-            <Link
-              href="/bundles"
-              className="text-ui-button uppercase tracking-wider border border-outline px-6 py-4 text-center text-on-surface hover:border-primary hover:text-primary transition-all duration-300"
-            >
-              View Bundles
-            </Link>
+            <Button href="/collections">Explore Collections</Button>
+            <Button href="/bundles" variant="outline">View Bundles</Button>
           </div>
         </div>
       </div>

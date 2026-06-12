@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Button from "../../components/Button";
 import { presets, getPresetBySlug, getPresetsByCategory } from "../../lib/data";
 
 export async function generateStaticParams() {
@@ -109,26 +110,12 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
                 </span>
                 <span className="text-label-caps text-on-surface-variant">One-time purchase</span>
               </div>
-              {preset.etsyLink ? (
-                <a
-                  href={preset.etsyLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-ui-button uppercase tracking-wider bg-primary text-on-primary py-4 text-center hover:opacity-80 transition-opacity duration-300 block"
-                >
-                  {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
-                </a>
-              ) : (
-                <button className="w-full text-ui-button uppercase tracking-wider bg-primary text-on-primary py-4 hover:opacity-80 transition-opacity duration-300">
-                  {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
-                </button>
-              )}
-              <Link
-                href="/bundles"
-                className="w-full text-ui-button uppercase tracking-wider border border-outline-variant py-4 text-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-300"
-              >
+              <Button href={preset.etsyLink} className="w-full">
+                {preset.isFree ? "Download Free" : `Buy for CA$${preset.price}`}
+              </Button>
+              <Button href="/bundles" variant="outline" className="w-full">
                 Get more with a bundle
-              </Link>
+              </Button>
             </div>
           </div>
         </div>

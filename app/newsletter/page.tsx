@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "../components/Button";
 import MailerLiteEmbed from "../components/MailerLiteEmbed";
 import { getPresetBySlug, presets } from "../lib/data";
 
@@ -40,12 +41,7 @@ export default function NewsletterPage() {
               when you subscribe. You'll also get new pack drops, promos, and
               occasional news from the site.
             </p>
-            <a
-              href="#subscribe"
-              className="inline-block text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
-            >
-              Get it free
-            </a>
+            <Button href="#subscribe" className="px-8">Get it free</Button>
           </div>
         </div>
       </section>
@@ -99,12 +95,9 @@ export default function NewsletterPage() {
                   </div>
                 ))}
               </div>
-              <a
-                href="#subscribe"
-                className="self-start mt-8 text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
-              >
+              <Button href="#subscribe" className="self-start mt-8 px-8">
                 Get it free
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -145,12 +138,7 @@ export default function NewsletterPage() {
             ))}
           </div>
           <div className="mt-12">
-            <a
-              href="#subscribe"
-              className="inline-block text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
-            >
-              Get it free
-            </a>
+            <Button href="#subscribe" className="px-8">Get it free</Button>
           </div>
         </div>
       </section>
@@ -177,12 +165,9 @@ export default function NewsletterPage() {
                 More packs worth seeing.
               </h2>
             </div>
-            <Link
-              href="/presets"
-              className="hidden md:inline-flex items-center gap-2 text-ui-button uppercase tracking-wider border border-primary px-6 py-3 hover:bg-primary hover:text-on-primary transition-all duration-300"
-            >
+            <Button href="/presets" variant="ghost" className="hidden md:inline-flex items-center gap-2">
               All Presets
-            </Link>
+            </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {explorePacks.map((preset) => (
@@ -220,12 +205,9 @@ export default function NewsletterPage() {
               </Link>
             ))}
           </div>
-          <Link
-            href="/presets"
-            className="md:hidden w-full flex items-center justify-center text-ui-button uppercase tracking-wider border border-primary py-4 hover:bg-primary hover:text-on-primary transition-all duration-300"
-          >
+          <Button href="/presets" variant="ghost" className="md:hidden w-full">
             All Presets
-          </Link>
+          </Button>
         </div>
       </section>
 

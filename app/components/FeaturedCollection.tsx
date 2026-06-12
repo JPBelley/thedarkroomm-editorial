@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "./Button";
 import { BEST_SELLER_SLUG, getPresetBySlug, bundles } from "../lib/data";
 
 const preset = getPresetBySlug(BEST_SELLER_SLUG)!;
@@ -63,30 +63,13 @@ export default function FeaturedCollection() {
           </div>
 
           <div className="flex flex-col gap-3">
-            {preset.etsyLink ? (
-              <a
-                href={preset.etsyLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ui-button uppercase tracking-wider bg-primary text-on-primary px-6 py-4 text-center hover:opacity-80 transition-opacity duration-300"
-              >
-                Buy for CA${preset.price}
-              </a>
-            ) : (
-              <Link
-                href={`/presets/${preset.slug}`}
-                className="text-ui-button uppercase tracking-wider bg-primary text-on-primary px-6 py-4 text-center hover:opacity-80 transition-opacity duration-300"
-              >
-                Buy for CA${preset.price}
-              </Link>
-            )}
+            <Button href={preset.etsyLink ?? `/presets/${preset.slug}`}>
+              Buy for CA${preset.price}
+            </Button>
             {bundle && (
-              <Link
-                href="/bundles"
-                className="text-ui-button uppercase tracking-wider border border-outline-variant px-6 py-4 text-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-300"
-              >
+              <Button href="/bundles" variant="outline">
                 Get the Full Bundle
-              </Link>
+              </Button>
             )}
           </div>
         </div>

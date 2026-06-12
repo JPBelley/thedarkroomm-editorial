@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "../components/Button";
 import { bundles, presets } from "../lib/data";
 
 export const metadata = {
@@ -64,12 +64,9 @@ export default function BundlesPage() {
                     <p className="text-label-caps text-on-surface-variant mb-1">Bundle price</p>
                     <p className="text-headline-lg text-primary">CA${bundle.price}</p>
                   </div>
-                  <Link
-                    href={`/bundles/${bundle.slug}`}
-                    className="text-ui-button uppercase tracking-wider bg-primary text-on-primary px-6 py-4 text-center hover:opacity-80 transition-opacity"
-                  >
+                  <Button href={bundle.etsyLink ?? `/bundles/${bundle.slug}`}>
                     Buy for CA${bundle.price}
-                  </Link>
+                  </Button>
                 </div>
               </div>
             );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Button from "./Button";
 import { presets, type Preset } from "../lib/data";
 
 const FEATURED_SLUGS = [
@@ -70,12 +71,9 @@ export default function Collections() {
           <p className="text-label-caps text-on-surface-variant mb-2">The Collection</p>
           <h2 className="text-headline-lg text-primary">Every genre. Every mood.</h2>
         </div>
-        <Link
-          href="/collections"
-          className="hidden md:inline-flex items-center gap-2 text-ui-button uppercase tracking-wider border border-primary px-6 py-3 hover:bg-primary hover:text-on-primary transition-all duration-300"
-        >
+        <Button href="/collections" variant="ghost" className="hidden md:inline-flex items-center gap-2">
           All Collections
-        </Link>
+        </Button>
       </div>
 
       {/* Bento grid row 1 */}
@@ -110,12 +108,9 @@ export default function Collections() {
 
       {/* Mobile CTA */}
       <div className="mt-10 md:hidden">
-        <Link
-          href="/collections"
-          className="w-full flex items-center justify-center text-ui-button uppercase tracking-wider border border-primary py-4 hover:bg-primary hover:text-on-primary transition-all duration-300"
-        >
+        <Button href="/collections" variant="ghost" className="w-full">
           All Collections
-        </Link>
+        </Button>
       </div>
     </section>
   );

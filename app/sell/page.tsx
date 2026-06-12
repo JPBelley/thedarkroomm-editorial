@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "../components/Button";
 
 export const metadata = {
   title: "Sell Your Presets — The Darkroomm",
@@ -56,12 +57,9 @@ export default function SellPage() {
               <p className="text-body-lg text-on-surface-variant max-w-xl mb-12">
                 Founding spots are limited. We're filling them now.
               </p>
-              <a
-                href="mailto:info@thedarkroomm.com"
-                className="inline-flex text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
-              >
+              <Button href="mailto:info@thedarkroomm.com" className="px-8">
                 Apply to sell
-              </a>
+              </Button>
             </div>
           </div>
         </div>
@@ -120,12 +118,9 @@ export default function SellPage() {
             <p className="text-body-lg text-on-surface-variant mb-10">
               Creator accounts aren't open yet. Apply now and you'll be first in line — and locked into the lowest rate we'll ever offer.
             </p>
-            <a
-              href="mailto:info@thedarkroomm.com"
-              className="inline-flex text-ui-button uppercase tracking-wider bg-primary text-on-primary px-10 py-4 hover:opacity-80 transition-opacity duration-300"
-            >
+            <Button href="mailto:info@thedarkroomm.com" className="px-10">
               Apply to sell
-            </a>
+            </Button>
           </div>
         </div>
       </section>
