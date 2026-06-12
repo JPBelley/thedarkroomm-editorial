@@ -1,29 +1,22 @@
+"use client";
+
+import { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useSearchParams } from "next/navigation";
 import { getListedPresets, categories, type Category } from "../lib/data";
 
-export const metadata = {
-  title: "All Presets — The Darkroomm",
-  description: "Browse every Lightroom preset pack. Cinematic, Moody, Urban, Landscape, and Vintage.",
-};
-
-export default function PresetsPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
-  return <PresetsContent searchParams={searchParams} />;
+export default function PresetsPage() {
+  return (
+    <Suspense>
+      <PresetsContent />
+    </Suspense>
+  );
 }
 
-async function PresetsContent({
-  searchParams,
-}: {
-  searchParams: Promise<{ category?: string }>;
-}) {
-  const params = await searchParams;
-  const activeCategory = params.category as Category | undefined;
+function PresetsContent() {
+  const searchParams = useSearchParams();
+  const activeCategory = searchParams.get("category") as Category | undefined;
   const listed = getListedPresets();
   const filtered = activeCategory
     ? listed.filter((p) => p.category === activeCategory)
@@ -31,7 +24,6 @@ async function PresetsContent({
 
   return (
     <main className="bg-surface min-h-screen">
-      {/* Page header */}
       <div className="pt-20 max-w-[1440px] mx-auto px-[20px] md:px-[64px]">
         <div className="mt-8 border-b border-outline-variant pb-4 mb-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
           <div>
@@ -102,7 +94,6 @@ async function PresetsContent({
           ))}
         </div>
       </div>
-
     </main>
   );
 }
