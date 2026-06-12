@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, Work_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import "./mailerlite.css";
 import Navbar from "./components/Navbar";
@@ -45,6 +46,18 @@ export default function RootLayout({
         {children}
         <Messaging />
         <Footer />
+        <Script
+          src="https://scripts.simpleanalyticscdn.com/latest.js"
+          strategy="afterInteractive"
+        />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://queue.simpleanalyticscdn.com/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </body>
     </html>
   );

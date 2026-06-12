@@ -53,8 +53,8 @@ export default function Hero() {
 
       {/* Hero before/after slider */}
       <BeforeAfterSlider
-        before="/presets/vintage-80s-8-before.jpg"
-        after="/presets/vintage-80s-8-after.jpg"
+        before="/presets/vintage-80s-8-before.avif"
+        after="/presets/vintage-80s-8-after.avif"
         beforeAlt="Original photo"
         afterAlt="Vintage 80's preset applied"
         objectPosition="center bottom"

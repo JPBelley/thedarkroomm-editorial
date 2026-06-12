@@ -12,7 +12,7 @@ export const metadata = {
 const EXPLORE_SLUGS = ["cinematic-film", "moody-fog", "urban-paris"];
 
 const afterImages = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
-  src: `/presets/earth-after-${n}.jpg`,
+  src: `/presets/earth-after-${n}.avif`,
   alt: `Earth Collection — photo ${n}`,
 }));
 
