@@ -9,7 +9,6 @@ export type Creator = {
   name: string;
   bio: string;
   location: string;
-  instagram?: string;
   website?: string;
 };
 
@@ -40,6 +39,7 @@ export type Bundle = {
   presetSlugs: string[];
   price: number;
   originalPrice: number;
+  etsyLink?: string;
 };
 
 // ─── Creators ────────────────────────────────────────────────────────────────
@@ -50,7 +50,6 @@ export const creators: Creator[] = [
     name: "The Darkroomm",
     bio: "Lightroom presets built around mood, light, and feeling. Each pack owns one specific look and commits to it.",
     location: "Montreal, QC",
-    instagram: "thedarkroomm",
   },
 ];
 
@@ -649,19 +648,20 @@ export const bundles: Bundle[] = [
     description: "All 5 cinematic packs in one. 60 desktop + 60 mobile presets.",
     coverImage: "/presets/cinematic-film-cover.jpg",
     presetSlugs: ["cinematic-film", "cinematic-blue", "cinematic-dark", "cinematic-green", "cinematic-pink"],
-    price: 5,
-    originalPrice: 120,
+    price: 10,
+    originalPrice: 10,
+    etsyLink: 'https://thedarkroomfactory.etsy.com/listing/1860795138'
   },
-  {
-    id: "b2",
-    slug: "vintage-bundle",
-    name: "The Vintage Bundle",
-    description: "Every vintage pack. From 35mm grain to expired film shifts.",
-    coverImage: "/presets/vintage-film-cover.png",
-    presetSlugs: ["vintage-film", "vintage-35mm", "vintage-80s", "vintage-90s", "vintage-analog", "vintage-expired", "vintage-summer", "vintage-warm-analog", "vintage-warm", "vintage", "vintage-film2"],
-    price: 5,
-    originalPrice: 264,
-  },
+  // {
+  //   id: "b2",
+  //   slug: "vintage-bundle",
+  //   name: "The Vintage Bundle",
+  //   description: "Every vintage pack. From 35mm grain to expired film shifts.",
+  //   coverImage: "/presets/vintage-film-cover.png",
+  //   presetSlugs: ["vintage-film", "vintage-35mm", "vintage-80s", "vintage-90s", "vintage-analog", "vintage-expired", "vintage-summer", "vintage-warm-analog", "vintage-warm", "vintage", "vintage-film2"],
+  //   price: 5,
+  //   originalPrice: 264,
+  // },
   {
     id: "b3",
     slug: "urban-bundle",
@@ -669,8 +669,9 @@ export const bundles: Bundle[] = [
     description: "Every city. Every mood. The full urban collection.",
     coverImage: "/presets/urban-paris-cover.jpg",
     presetSlugs: ["urban-paris", "urban-tokyo", "urban-berlin", "urban-london", "urban-newyork", "urban-hongkong", "urban-mexico", "urban-sf", "urban-teal"],
-    price: 5,
-    originalPrice: 216,
+    price: 11,
+    originalPrice: 11,
+    etsyLink: "https://thedarkroomfactory.etsy.com/listing/1896552989"
   },
 ];
 

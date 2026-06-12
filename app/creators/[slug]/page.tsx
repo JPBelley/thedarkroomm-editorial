@@ -46,18 +46,6 @@ export default async function CreatorPage({ params }: { params: Promise<{ slug: 
                 <p className="text-label-caps text-on-surface-variant mt-1">{creator.location}</p>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-4 md:text-right flex md:justify-end gap-4">
-              {creator.instagram && (
-                <Link
-                  href={`https://instagram.com/${creator.instagram}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ui-button uppercase tracking-wider border border-outline-variant px-4 py-2 text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-300"
-                >
-                  Instagram
-                </Link>
-              )}
-            </div>
           </div>
           <p className="text-body-lg text-on-surface-variant mt-6 max-w-2xl">{creator.bio}</p>
         </div>

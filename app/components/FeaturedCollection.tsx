@@ -82,7 +82,7 @@ export default function FeaturedCollection() {
             )}
             {bundle && (
               <Link
-                href={`/bundles/${bundle.slug}`}
+                href="/bundles"
                 className="text-ui-button uppercase tracking-wider border border-outline-variant px-6 py-4 text-center text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-300"
               >
                 Get the Full Bundle

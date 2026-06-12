@@ -23,8 +23,6 @@ export default function BundlesPage() {
             const includedPacks = bundle.presetSlugs
               .map((s) => presets.find((p) => p.slug === s))
               .filter(Boolean);
-            const savings = bundle.originalPrice - bundle.price;
-
             return (
               <div
                 key={bundle.slug}
@@ -39,9 +37,6 @@ export default function BundlesPage() {
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute bottom-4 left-4 bg-primary text-on-primary px-3 py-1.5">
-                      <span className="text-label-caps">Save ${savings}</span>
-                    </div>
                   </div>
                 </div>
 
