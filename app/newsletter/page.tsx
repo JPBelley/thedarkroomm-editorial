@@ -99,6 +99,12 @@ export default function NewsletterPage() {
                   </div>
                 ))}
               </div>
+              <a
+                href="#subscribe"
+                className="self-start mt-8 text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
+              >
+                Get it free
+              </a>
             </div>
           </div>
         </div>
@@ -137,6 +143,14 @@ export default function NewsletterPage() {
                 <Image src={img.src} alt={img.alt} fill className="object-cover" />
               </div>
             ))}
+          </div>
+          <div className="mt-12">
+            <a
+              href="#subscribe"
+              className="inline-block text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
+            >
+              Get it free
+            </a>
           </div>
         </div>
       </section>
