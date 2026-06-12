@@ -39,27 +39,17 @@ export default function Navbar() {
             { label: "Presets", href: "/presets" },
             { label: "Bundles", href: "/bundles" },
             { label: "Creators", href: "/creators/thedarkroomm" },
-            { label: "Free Preset", href: "/newsletter", reload: true },
+            { label: "Free Preset", href: "/newsletter" },
             { label: "Sell", href: "/sell" },
-          ].map((item) =>
-            item.reload ? (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-ui-button text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-widest"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-ui-button text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-widest"
-              >
-                {item.label}
-              </Link>
-            )
-          )}
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="text-ui-button text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-widest"
+            >
+              {item.label}
+            </Link>
+          ))}
         </div>
 
         {/* CTA */}
