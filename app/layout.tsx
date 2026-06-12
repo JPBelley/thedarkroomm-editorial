@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${workSans.variable}`}>
+    <html lang="en" className={`${newsreader.variable} ${workSans.variable} scroll-smooth`}>
       <head>
         <link
           rel="stylesheet"

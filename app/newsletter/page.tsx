@@ -40,9 +40,12 @@ export default function NewsletterPage() {
               when you subscribe. You'll also get new pack drops, promos, and
               occasional news from the site.
             </p>
-            <div className="max-w-md mx-auto">
-              <MailerLiteEmbed />
-            </div>
+            <a
+              href="#subscribe"
+              className="inline-block text-ui-button uppercase tracking-wider bg-primary text-on-primary px-8 py-4 hover:opacity-80 transition-opacity duration-300"
+            >
+              Get it free
+            </a>
           </div>
         </div>
       </section>
@@ -134,6 +137,16 @@ export default function NewsletterPage() {
                 <Image src={img.src} alt={img.alt} fill className="object-cover" />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SUBSCRIBE FORM ───────────────────────────────────── */}
+      <section id="subscribe" className="border-b border-outline-variant">
+        <div className="max-w-[1440px] mx-auto px-[20px] md:px-[64px] py-16 md:py-24">
+          <div className="max-w-md mx-auto text-center">
+            <p className="text-label-caps text-on-surface-variant mb-6">Subscribe</p>
+            <MailerLiteEmbed />
           </div>
         </div>
       </section>
