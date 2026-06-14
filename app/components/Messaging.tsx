@@ -11,7 +11,7 @@ export default function Messaging() {
             <h2 className="text-display-lg text-primary mb-6">
               Edit with
               <br />
-              <em style={{ fontStyle: "italic" }}>intention.</em>
+              <em>intention.</em>
             </h2>
             <p className="text-body-lg text-on-surface-variant">
               Subscribe and get a free 6-pack of Lightroom presets. New packs first, no noise.

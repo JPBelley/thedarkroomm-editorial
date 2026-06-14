@@ -34,7 +34,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${workSans.variable} scroll-smooth`}>
+    // data-scroll-behavior makes Next scroll instantly on route changes;
+    // smooth scrolling still applies to in-page anchor links.
+    <html
+      lang="en"
+      className={`${newsreader.variable} ${workSans.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+    >
       <head>
         <link
           rel="stylesheet"

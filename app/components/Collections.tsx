@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
-import { presets, type Preset } from "../lib/data";
+import { requirePresetBySlug, type Preset } from "../lib/data";
 
 const FEATURED_SLUGS = [
   "cinematic-film",
@@ -13,7 +13,7 @@ const FEATURED_SLUGS = [
 ];
 
 const featured = FEATURED_SLUGS.map((slug, i) => ({
-  ...(presets.find((p) => p.slug === slug) as Preset),
+  ...requirePresetBySlug(slug),
   displayId: String(i + 1).padStart(2, "0"),
 }));
 
@@ -21,10 +21,12 @@ function CollectionCard({
   preset,
   displayId,
   aspectClass,
+  sizes,
 }: {
   preset: Preset;
   displayId: string;
   aspectClass: string;
+  sizes: string;
 }) {
   return (
     <div className="group flex flex-col gap-3">
@@ -35,6 +37,7 @@ function CollectionCard({
           src={preset.coverImage}
           alt={`${preset.name} preset example`}
           fill
+          sizes={sizes}
           className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
         <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-500" />
@@ -79,30 +82,30 @@ export default function Collections() {
       {/* Bento grid row 1 */}
       <div className="grid grid-cols-12 gap-6 mb-6">
         <div className="col-span-12 md:col-span-7">
-          <CollectionCard preset={featured[0]} displayId={featured[0].displayId} aspectClass="aspect-[4/3]" />
+          <CollectionCard preset={featured[0]} displayId={featured[0].displayId} aspectClass="aspect-[4/3]" sizes="(min-width: 768px) 58vw, 100vw" />
         </div>
         <div className="col-span-12 md:col-span-5">
-          <CollectionCard preset={featured[1]} displayId={featured[1].displayId} aspectClass="aspect-square" />
+          <CollectionCard preset={featured[1]} displayId={featured[1].displayId} aspectClass="aspect-square" sizes="(min-width: 768px) 42vw, 100vw" />
         </div>
       </div>
 
       {/* Bento grid row 2 */}
       <div className="grid grid-cols-12 gap-6 mb-6">
         <div className="col-span-12 md:col-span-4">
-          <CollectionCard preset={featured[2]} displayId={featured[2].displayId} aspectClass="aspect-square" />
+          <CollectionCard preset={featured[2]} displayId={featured[2].displayId} aspectClass="aspect-square" sizes="(min-width: 768px) 33vw, 100vw" />
         </div>
         <div className="col-span-12 md:col-span-8">
-          <CollectionCard preset={featured[3]} displayId={featured[3].displayId} aspectClass="aspect-[16/9]" />
+          <CollectionCard preset={featured[3]} displayId={featured[3].displayId} aspectClass="aspect-[16/9]" sizes="(min-width: 768px) 66vw, 100vw" />
         </div>
       </div>
 
       {/* Bento grid row 3 */}
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-12 md:col-span-5">
-          <CollectionCard preset={featured[4]} displayId={featured[4].displayId} aspectClass="aspect-[3/4]" />
+          <CollectionCard preset={featured[4]} displayId={featured[4].displayId} aspectClass="aspect-[3/4]" sizes="(min-width: 768px) 42vw, 100vw" />
         </div>
         <div className="col-span-12 md:col-span-7">
-          <CollectionCard preset={featured[5]} displayId={featured[5].displayId} aspectClass="aspect-[3/2]" />
+          <CollectionCard preset={featured[5]} displayId={featured[5].displayId} aspectClass="aspect-[3/2]" sizes="(min-width: 768px) 58vw, 100vw" />
         </div>
       </div>
 

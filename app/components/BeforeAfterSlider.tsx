@@ -44,14 +44,14 @@ export default function BeforeAfterSlider({ before, after, beforeAlt = "Before",
       onPointerUp={onPointerUp}
     >
       {/* After — full width, base layer */}
-      <Image src={after} alt={afterAlt} fill className="object-cover" style={{ objectPosition }} priority />
+      <Image src={after} alt={afterAlt} fill sizes="100vw" className="object-cover" style={{ objectPosition }} preload />
 
       {/* Before — clipped to left of handle */}
       <div
         className="absolute inset-0 overflow-hidden"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
       >
-        <Image src={before} alt={beforeAlt} fill className="object-cover" style={{ objectPosition }} priority />
+        <Image src={before} alt={beforeAlt} fill sizes="100vw" className="object-cover" style={{ objectPosition }} preload />
       </div>
 
       {/* Divider line */}

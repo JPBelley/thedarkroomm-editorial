@@ -690,6 +690,14 @@ export function getPresetBySlug(slug: string): Preset | undefined {
   return presets.find((p) => p.slug === slug);
 }
 
+// For hardcoded slugs (featured sections, editorial picks) — fails loudly at
+// build time if the slug ever gets renamed or removed.
+export function requirePresetBySlug(slug: string): Preset {
+  const preset = getPresetBySlug(slug);
+  if (!preset) throw new Error(`Preset not found: "${slug}"`);
+  return preset;
+}
+
 export function getPresetsByCategory(category: Category): Preset[] {
   return presets.filter((p) => p.category === category);
 }

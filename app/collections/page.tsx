@@ -47,6 +47,7 @@ export default function CollectionsPage() {
                     src={getCover(cat.slug)}
                     alt={cat.label}
                     fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
@@ -75,6 +76,7 @@ export default function CollectionsPage() {
                     src={getCover(cat.slug)}
                     alt={cat.label}
                     fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />

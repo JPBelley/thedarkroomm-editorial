@@ -1,13 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 import Button from "../components/Button";
 import MailerLiteEmbed from "../components/MailerLiteEmbed";
-import { getPresetBySlug, presets } from "../lib/data";
+import PresetCard from "../components/PresetCard";
+import { requirePresetBySlug } from "../lib/data";
+
+const earth = requirePresetBySlug("earth");
 
 export const metadata = {
   title: "Free Preset Pack — The Darkroomm",
-  description:
-    "Subscribe to the newsletter and get the Earth Collection free. 6 desktop + 5 mobile Lightroom presets.",
+  description: `Subscribe to the newsletter and get the ${earth.name} free. ${earth.includes.desktop} desktop + ${earth.includes.mobile} mobile Lightroom presets.`,
 };
 
 const EXPLORE_SLUGS = ["cinematic-film", "moody-fog", "urban-paris"];
@@ -18,10 +19,7 @@ const afterImages = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
 }));
 
 export default function NewsletterPage() {
-  const earth = getPresetBySlug("earth")!;
-  const explorePacks = EXPLORE_SLUGS.map(
-    (s) => presets.find((p) => p.slug === s)!
-  );
+  const explorePacks = EXPLORE_SLUGS.map((s) => requirePresetBySlug(s));
 
   return (
     <main className="bg-surface min-h-screen">
@@ -34,11 +32,12 @@ export default function NewsletterPage() {
               The Darkroomm Newsletter
             </p>
             <h1 className="text-display-lg text-primary mb-6 text-balance">
-              Subscribe and get <em style={{ fontStyle: "italic" }}>the pack below</em> for free.
+              Subscribe and get <em>the pack below</em> for free.
             </h1>
             <p className="max-w-2xl mx-auto text-body-lg text-on-surface-variant mb-10">
-              The Earth Collection, 6 desktop and 5 mobile presets, is yours
-              when you subscribe. You'll also get new pack drops, promos, and
+              The {earth.name}, {earth.includes.desktop} desktop and{" "}
+              {earth.includes.mobile} mobile presets, is yours when you
+              subscribe. You'll also get new pack drops, promos, and
               occasional news from the site.
             </p>
             <Button href="#subscribe" className="px-8">Get it free</Button>
@@ -60,6 +59,7 @@ export default function NewsletterPage() {
                   src={earth.coverImage}
                   alt="Earth Collection cover"
                   fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -70,7 +70,7 @@ export default function NewsletterPage() {
               <h2 className="text-display-lg text-primary mb-4">
                 Earth
                 <br />
-                <em style={{ fontStyle: "italic" }}>Collection</em>
+                <em>Collection</em>
               </h2>
               <p className="text-body-lg text-on-surface-variant mb-10">
                 Warm, earthy tones built on natural light. Greens that stay
@@ -125,6 +125,7 @@ export default function NewsletterPage() {
                 src={afterImages[0].src}
                 alt={afterImages[0].alt}
                 fill
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="object-cover"
               />
             </div>
@@ -133,7 +134,13 @@ export default function NewsletterPage() {
                 key={img.src}
                 className="relative aspect-square overflow-hidden bg-surface-container"
               >
-                <Image src={img.src} alt={img.alt} fill className="object-cover" />
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
@@ -171,38 +178,14 @@ export default function NewsletterPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {explorePacks.map((preset) => (
-              <Link
+              <PresetCard
                 key={preset.slug}
-                href={`/presets/${preset.slug}`}
-                className="group flex flex-col gap-3"
-              >
-                <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
-                  <Image
-                    src={preset.coverImage}
-                    alt={preset.name}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                  />
-                  <div className="absolute top-3 left-3 bg-surface border-ultra border-outline-variant px-2.5 py-1">
-                    <span className="text-label-caps text-primary capitalize">
-                      {preset.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h3 className="text-headline-md text-primary leading-tight">
-                      {preset.name}
-                    </h3>
-                    <p className="text-body-md text-on-surface-variant mt-1 line-clamp-2">
-                      {preset.description}
-                    </p>
-                  </div>
-                  <span className="text-label-caps text-on-surface-variant ml-4 whitespace-nowrap">
-                    CA${preset.price}
-                  </span>
-                </div>
-              </Link>
+                preset={preset}
+                aspectClass="aspect-[4/3]"
+                subtitle="description"
+                titleAs="h3"
+                sizes="(min-width: 640px) 33vw, 100vw"
+              />
             ))}
           </div>
           <Button href="/presets" variant="ghost" className="md:hidden w-full">

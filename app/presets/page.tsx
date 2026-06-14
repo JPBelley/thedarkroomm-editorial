@@ -1,9 +1,9 @@
 "use client";
 
 import { Suspense } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import PresetCard from "../components/PresetCard";
 import { getListedPresets, categories, type Category } from "../lib/data";
 
 export default function PresetsPage() {
@@ -67,30 +67,12 @@ function PresetsContent() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-6 gap-y-12 pb-[128px]">
           {filtered.map((preset) => (
-            <Link key={preset.slug} href={`/presets/${preset.slug}`} className="group flex flex-col gap-3">
-              <div className="relative w-full aspect-square overflow-hidden bg-surface-container">
-                <Image
-                  src={preset.coverImage}
-                  alt={preset.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                <div className="absolute top-3 left-3 bg-surface border-ultra border-outline-variant px-2.5 py-1">
-                  <span className="text-label-caps text-primary">{preset.category}</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="text-headline-md text-primary leading-tight">{preset.name}</h2>
-                  <p className="text-label-caps text-on-surface-variant mt-1">
-                    {preset.includes.desktop} desktop · {preset.includes.mobile} mobile
-                  </p>
-                </div>
-                <span className="text-label-caps text-on-surface-variant whitespace-nowrap ml-2">
-                  {preset.isFree ? "Free" : `CA$${preset.price}`}
-                </span>
-              </div>
-            </Link>
+            <PresetCard
+              key={preset.slug}
+              preset={preset}
+              subtitle="counts"
+              sizes="(min-width: 1280px) 25vw, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            />
           ))}
         </div>
       </div>

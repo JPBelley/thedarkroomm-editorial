@@ -46,7 +46,7 @@ export default function SellPage() {
               <p className="text-label-caps text-on-surface-variant mb-8">Sell on The Darkroomm</p>
               <h1 className="text-display-lg text-primary mb-8 text-balance">
                 Built by a photographer.<br />
-                <em style={{ fontStyle: "italic" }}>Open to the right ones.</em>
+                <em>Open to the right ones.</em>
               </h1>
               <p className="text-body-lg text-on-surface-variant max-w-xl mb-4">
                 The Darkroomm started as one creator with a specific look. It grew into something bigger, and we're keeping it tight on purpose.
@@ -113,7 +113,7 @@ export default function SellPage() {
             <p className="text-label-caps text-on-surface-variant mb-6">Ready?</p>
             <h2 className="text-display-lg text-primary mb-6 text-balance">
               Apply now.<br />
-              <em style={{ fontStyle: "italic" }}>Founding rate locked in.</em>
+              <em>Founding rate locked in.</em>
             </h2>
             <p className="text-body-lg text-on-surface-variant mb-10">
               Creator accounts aren't open yet. Apply now and you'll be first in line — and locked into the lowest rate we'll ever offer.

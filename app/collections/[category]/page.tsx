@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import PresetCard from "../../components/PresetCard";
 import { categories, getPresetsByCategory, type Category } from "../../lib/data";
 
 export async function generateStaticParams() {
@@ -61,30 +61,20 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 pb-[128px]">
           {packs.map((preset) => (
-            <Link key={preset.slug} href={`/presets/${preset.slug}`} className="group flex flex-col gap-3">
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-container">
-                <Image
-                  src={preset.coverImage}
-                  alt={preset.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                />
-                {preset.price >= 49 && (
-                  <div className="absolute top-3 right-3 bg-primary text-on-primary px-2.5 py-1">
-                    <span className="text-label-caps">Master</span>
-                  </div>
-                )}
-              </div>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h2 className="text-headline-md text-primary">{preset.name}</h2>
-                  <p className="text-body-md text-on-surface-variant mt-1 line-clamp-2">{preset.description}</p>
+            <PresetCard
+              key={preset.slug}
+              preset={preset}
+              aspectClass="aspect-[4/3]"
+              showBadge={false}
+              subtitle="description"
+              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            >
+              {preset.price >= 49 && (
+                <div className="absolute top-3 right-3 bg-primary text-on-primary px-2.5 py-1">
+                  <span className="text-label-caps">Master</span>
                 </div>
-                <span className="text-label-caps text-on-surface-variant ml-4 whitespace-nowrap">
-                  {preset.isFree ? "Free" : `CA$${preset.price}`}
-                </span>
-              </div>
-            </Link>
+              )}
+            </PresetCard>
           ))}
         </div>
       </div>

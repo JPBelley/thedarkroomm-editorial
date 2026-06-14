@@ -23,7 +23,7 @@ export default function Hero() {
           <h1 className="text-display-xl text-primary">
             Light.
             <br />
-            <em className="not-italic" style={{ fontStyle: "italic" }}>Mood.</em>
+            <em>Mood.</em>
             <br />
             Film.
           </h1>

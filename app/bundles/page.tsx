@@ -35,6 +35,7 @@ export default function BundlesPage() {
                       src={bundle.coverImage}
                       alt={bundle.name}
                       fill
+                      sizes="(min-width: 768px) 33vw, 100vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>

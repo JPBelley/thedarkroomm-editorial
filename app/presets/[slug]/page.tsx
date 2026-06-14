@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Button from "../../components/Button";
+import PresetCard from "../../components/PresetCard";
 import { presets, getPresetBySlug, getPresetsByCategory } from "../../lib/data";
 
 export async function generateStaticParams() {
@@ -55,8 +56,9 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
                 src={preset.coverImage}
                 alt={preset.name}
                 fill
+                sizes="(min-width: 768px) 58vw, 100vw"
                 className="object-cover"
-                priority
+                preload
               />
             </div>
           </div>
@@ -126,20 +128,13 @@ export default async function PresetPage({ params }: { params: Promise<{ slug: s
             <p className="text-label-caps text-on-surface-variant mb-8">More in {preset.category}</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {related.map((r) => (
-                <Link key={r.slug} href={`/presets/${r.slug}`} className="group flex flex-col gap-3">
-                  <div className="relative w-full aspect-square overflow-hidden bg-surface-container">
-                    <Image
-                      src={r.coverImage}
-                      alt={r.name}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                  </div>
-                  <div className="flex justify-between items-start">
-                    <h3 className="text-headline-md text-primary">{r.name}</h3>
-                    <span className="text-label-caps text-on-surface-variant">CA${r.price}</span>
-                  </div>
-                </Link>
+                <PresetCard
+                  key={r.slug}
+                  preset={r}
+                  showBadge={false}
+                  titleAs="h3"
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                />
               ))}
             </div>
           </div>

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Button from "./Button";
-import { BEST_SELLER_SLUG, getPresetBySlug, bundles } from "../lib/data";
+import { BEST_SELLER_SLUG, requirePresetBySlug, bundles } from "../lib/data";
 
-const preset = getPresetBySlug(BEST_SELLER_SLUG)!;
+const preset = requirePresetBySlug(BEST_SELLER_SLUG);
 const bundle = bundles.find((b) => b.presetSlugs.includes(BEST_SELLER_SLUG));
 
 // Split name at first space: "Vintage 80's" → ["Vintage", "80's"]
@@ -20,6 +20,7 @@ export default function FeaturedCollection() {
             src={preset.coverImage}
             alt={preset.name}
             fill
+            sizes="(min-width: 768px) 58vw, 100vw"
             className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
           />
           <div className="absolute bottom-6 left-6 bg-primary text-on-primary px-4 py-2">
@@ -36,7 +37,7 @@ export default function FeaturedCollection() {
               {nameLine2 && (
                 <>
                   <br />
-                  <em style={{ fontStyle: "italic" }}>{nameLine2}</em>
+                  <em>{nameLine2}</em>
                 </>
               )}
             </h2>
